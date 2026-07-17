@@ -235,7 +235,7 @@ export default function Home() {
             <div className="flex items-center gap-2">
               <Link
                 href="/admin"
-                className="hidden md:inline-flex text-[11px] font-bold text-slate-400 hover:text-white border border-white/8 bg-white/5 hover:bg-white/10 px-3 py-1.5 rounded-lg transition-all"
+                className="hidden lg:inline-flex text-[11px] font-bold text-slate-400 hover:text-white border border-white/8 bg-white/5 hover:bg-white/10 px-3 py-1.5 rounded-lg transition-all"
               >
                 Admin
               </Link>
