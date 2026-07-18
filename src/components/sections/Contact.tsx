@@ -51,8 +51,8 @@ export const Contact: React.FC = () => {
         message: formState.message
       });
 
-      // 2. Email forwarder via Web3Forms if NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY is present
-      const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
+      // 2. Email forwarder via Web3Forms (with fallback key)
+      const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "70b55baf-b289-4a33-b5d9-db48ad697229";
       if (accessKey) {
         try {
           await fetch('https://api.web3forms.com/submit', {
