@@ -1,5 +1,7 @@
 # Premium Portfolio Dashboard - Saksham Aggarwal
 
+[![Vercel Deployment](https://img.shields.io/badge/Vercel-Deployed-emerald?style=flat&logo=vercel)](https://saksham-aggarwal.vercel.app)
+
 A state-of-the-art developer portfolio and database control panel built with **Next.js 16**, **React 19**, and **Prisma ORM**. The application features an interactive terminal interface, scroll-linked observer animations, and a secure administration panel backed by SQLite.
 
 ---
