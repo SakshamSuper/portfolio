@@ -310,7 +310,7 @@ export const Hero: React.FC<HeroProps> = ({ onScrollToProjects, onScrollToContac
                 hidden: { opacity: 0, y: 15 },
                 visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] } }
               }}
-              className="mt-5 hidden lg:block"
+              className="mt-5"
             >
               <p className="text-[10px] uppercase tracking-[0.2em] text-[#94A3B8]/60 font-bold mb-2">Trusted by technologies</p>
               <div className="flex flex-wrap gap-3.5 items-center">
@@ -584,51 +584,6 @@ export const Hero: React.FC<HeroProps> = ({ onScrollToProjects, onScrollToContac
             </div>
           </div>
           {/* ── END RIGHT ── */}
-
-          {/* ── MOBILE-ONLY TECH ICONS ── */}
-          <div className="mt-4 block lg:hidden w-full col-span-1 md:col-span-12">
-            <p className="text-[10px] uppercase tracking-[0.2em] text-[#94A3B8]/60 font-bold mb-3">Trusted by technologies</p>
-            <div className="flex flex-wrap gap-2.5 sm:gap-3.5 items-center">
-              {TECH_ICONS.map((item) => {
-                const isGithub = item.label === 'GitHub';
-                const isMySQL = item.label === 'MySQL';
-                const isHuggingFace = item.label === 'Hugging Face';
-                return (
-                  <div key={`mobile-${item.label}`} className="group relative">
-                    <div className="w-11 h-11 sm:w-13 sm:h-13 rounded-xl bg-white/[0.02] border border-white/5 flex items-center justify-center transition-all duration-300 group-hover:bg-white/[0.08] group-hover:border-white/20 shadow-lg">
-                      {item.isConcept ? (
-                        item.renderSvg ? (
-                          item.renderSvg()
-                        ) : (
-                          <span className="text-[9.5px] font-black font-mono leading-none tracking-widest select-none"
-                            style={{ color: item.color || '#0ea5e9' }}>
-                            {item.label}
-                          </span>
-                        )
-                      ) : (
-                        <img
-                          src={item.src}
-                          alt={item.label}
-                          style={{
-                            filter: isGithub 
-                              ? 'brightness(0) invert(1)' 
-                              : isMySQL 
-                                ? 'brightness(1.3) drop-shadow(0 0 6px rgba(0, 117, 143, 0.4))'
-                                : isHuggingFace
-                                  ? 'drop-shadow(0 0 4px rgba(255, 214, 94, 0.25))'
-                                  : 'none'
-                          }}
-                          className={`w-6 h-6 sm:w-7 sm:h-7 object-contain ${
-                            isGithub ? 'opacity-80' : 'opacity-70'
-                          }`}
-                        />
-                      )}
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
 
         </div>
       </div>
