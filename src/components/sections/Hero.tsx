@@ -363,14 +363,14 @@ export const Hero: React.FC<HeroProps> = ({ onScrollToProjects, onScrollToContac
           </motion.div>
 
           {/* ────────── RIGHT: PREMIUM DASHBOARD ────────── */}
-          <div className="relative flex flex-col gap-2.5" style={{ minHeight: '525px' }}>
+          <div className="relative flex flex-col gap-2.5" style={{ minHeight: 'auto' }}>
 
             {/* ── TOP ROW: Profile card + Metric cards ── */}
-            <div className="grid grid-cols-12 gap-2.5 flex-1 min-h-0">
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-2.5 flex-1 min-h-0">
 
               {/* Profile Card */}
               <div
-                className="col-span-4 relative flex flex-col overflow-hidden rounded-2xl border border-white/8"
+                className="col-span-12 md:col-span-4 relative flex flex-col overflow-hidden rounded-2xl border border-white/8 min-h-[300px] md:min-h-0"
                 style={{
                   background: 'linear-gradient(180deg, rgba(14,14,18,0.9) 0%, rgba(6,6,8,0.99) 100%)',
                   backdropFilter: 'blur(20px)',
@@ -381,9 +381,9 @@ export const Hero: React.FC<HeroProps> = ({ onScrollToProjects, onScrollToContac
                 <div className="h-0.5 w-full" style={{ background: 'linear-gradient(90deg, transparent, #F8FAFC, #F8FAFC, transparent)' }} />
 
                 {/* Photo */}
-                <div className="relative flex-1 overflow-hidden">
+                <div className="relative flex-1 min-h-[220px] md:min-h-0 overflow-hidden">
                   <Image src="/assets/portrait.png" alt="Saksham Aggarwal" fill priority
-                    className="object-cover object-top" sizes="220px" />
+                    className="object-cover object-top" sizes="(max-width: 768px) 100vw, 220px" />
                   {/* Bottom gradient fade */}
                   <div className="absolute bottom-0 left-0 right-0 h-20"
                     style={{ background: 'linear-gradient(transparent, rgba(12,12,16,0.98))' }} />
@@ -401,10 +401,10 @@ export const Hero: React.FC<HeroProps> = ({ onScrollToProjects, onScrollToContac
               </div>
 
               {/* Right column — 2 custom cards */}
-              <div className="col-span-8 flex flex-col gap-3 min-w-0">
+              <div className="col-span-12 md:col-span-8 flex flex-col gap-3 min-w-0">
 
                 {/* ── CARD 1: Verified Certifications ── */}
-                <div className="flex-1 rounded-2xl border border-white/8 px-4 py-3 flex flex-col justify-between overflow-hidden relative group"
+                <div className="flex-1 rounded-2xl border border-white/8 px-3.5 sm:px-4 py-3 flex flex-col justify-between overflow-hidden relative group"
                   style={{ background: 'rgba(10,10,12,0.95)', backdropFilter: 'blur(20px)', boxShadow: '0 8px 32px rgba(0,0,0,0.6)' }}>
                   
                   {/* Dynamic background spotlight matching active cert brand color */}
@@ -424,7 +424,7 @@ export const Hero: React.FC<HeroProps> = ({ onScrollToProjects, onScrollToContac
                   </div>
 
                   {/* Squircle Badges */}
-                  <div className="grid grid-cols-5 gap-2.5 items-start my-1.5 z-10">
+                  <div className="grid grid-cols-5 gap-1 sm:gap-2.5 items-start my-1.5 z-10">
                     {CERTS_DATA.map((cert, index) => {
                       const isActive = activeCert === index;
                       return (
@@ -433,20 +433,20 @@ export const Hero: React.FC<HeroProps> = ({ onScrollToProjects, onScrollToContac
                           type="button"
                           onMouseEnter={() => setActiveCert(index)}
                           onClick={() => setActiveCert(index)}
-                          className="flex flex-col items-center focus:outline-none group/btn cursor-pointer"
+                          className="flex flex-col items-center focus:outline-none group/btn cursor-pointer min-w-0"
                         >
-                          <div className={`relative w-[60px] h-[60px] rounded-xl overflow-hidden border flex items-center justify-center transition-all duration-300 ${
-                            isActive ? 'scale-110 border-white/30 bg-[#0a0a0d]' : 'border-white/5 bg-black/40 opacity-50 group-hover/btn:opacity-100 group-hover/btn:scale-105'
+                          <div className={`relative w-10 h-10 sm:w-[60px] sm:h-[60px] rounded-xl overflow-hidden border flex items-center justify-center transition-all duration-300 ${
+                            isActive ? 'scale-105 sm:scale-110 border-white/30 bg-[#0a0a0d]' : 'border-white/5 bg-black/40 opacity-50 group-hover/btn:opacity-100 group-hover/btn:scale-105'
                           }`}
                             style={{ boxShadow: isActive ? `0 0 14px ${cert.shadow}` : 'none' }}>
                             <img
                               src={cert.img}
                               alt={cert.name}
-                              className="w-11 h-11 object-contain"
+                              className="w-7 h-7 sm:w-11 sm:h-11 object-contain"
                               onError={(e) => { (e.target as HTMLImageElement).src = cert.fallback; }}
                             />
                           </div>
-                          <span className={`text-[9.5px] font-bold tracking-tight text-center leading-[1.1] mt-1.5 transition-colors duration-300 w-full ${
+                          <span className={`text-[8px] sm:text-[9.5px] font-bold tracking-tight text-center leading-[1.1] mt-1 transition-colors duration-300 w-full truncate ${
                             isActive ? 'text-white' : 'text-slate-400 group-hover/btn:text-slate-200'
                           }`}>
                             {cert.name}

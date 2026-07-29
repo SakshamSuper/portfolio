@@ -120,9 +120,9 @@ export default function Home() {
       </div>
 
       {/* ══════════════════════════════════
-          LEFT SIDEBAR
+          LEFT SIDEBAR (Desktop / Tablet)
       ══════════════════════════════════ */}
-      <aside className="fixed left-0 top-0 bottom-0 z-50 flex flex-col justify-between items-center py-6 border-r border-white/5"
+      <aside className="hidden md:flex fixed left-0 top-0 bottom-0 z-50 flex-col justify-between items-center py-6 border-r border-white/5"
         style={{ width: '64px', background: 'rgba(14,14,18,0.9)', backdropFilter: 'blur(20px)' }}>
 
         {/* Logo */}
@@ -193,12 +193,12 @@ export default function Home() {
       {/* ══════════════════════════════════
           MAIN CONTENT
       ══════════════════════════════════ */}
-      <div className="flex-1 flex flex-col" style={{ marginLeft: '64px' }}>
+      <div className="flex-1 flex flex-col ml-0 md:ml-[64px]">
 
         {/* ── TOP NAVBAR ── */}
-        <header className="fixed top-3 left-[64px] right-0 z-40 px-6 md:px-12 lg:px-16 pointer-events-none">
+        <header className="fixed top-2 sm:top-3 left-0 md:left-[64px] right-0 z-40 px-3 sm:px-6 md:px-12 lg:px-16 pointer-events-none">
           <div
-            className="w-full max-w-7xl mx-auto flex items-center justify-between px-6 py-2.5 rounded-2xl border border-white/8 pointer-events-auto"
+            className="w-full max-w-7xl mx-auto flex items-center justify-between px-3.5 sm:px-6 py-2 rounded-2xl border border-white/8 pointer-events-auto"
             style={{
               background: 'rgba(8,8,10,0.85)',
               backdropFilter: 'blur(24px)',
@@ -211,7 +211,7 @@ export default function Home() {
               className="flex items-center gap-2 group"
             >
               <span className="font-mono font-bold text-[#F8FAFC] text-lg group-hover:text-[#F8FAFC] transition-colors">&lt;/&gt;</span>
-              <span className="font-bold text-white text-sm tracking-tight">Saksham Aggarwal</span>
+              <span className="font-bold text-white text-xs sm:text-sm tracking-tight whitespace-nowrap">Saksham Aggarwal</span>
             </button>
 
             {/* Nav Links */}
@@ -242,11 +242,11 @@ export default function Home() {
               <a
                 href="/Saksham_Aggarwal_Resume.pdf"
                 download
-                className="inline-flex items-center gap-1.5 text-[11px] font-bold text-white px-4 py-1.5 rounded-lg transition-all hover:opacity-90 hover:scale-105 active:scale-95"
+                className="inline-flex items-center gap-1.5 text-[10px] sm:text-[11px] font-bold text-white px-2.5 sm:px-4 py-1.5 rounded-lg transition-all hover:opacity-90 hover:scale-105 active:scale-95 whitespace-nowrap"
                 style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}
               >
-                <Download className="w-3.5 h-3.5 text-[#F8FAFC]" />
-                Download Resume
+                <Download className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#F8FAFC] shrink-0" />
+                <span>Download Resume</span>
               </a>
             </div>
           </div>
