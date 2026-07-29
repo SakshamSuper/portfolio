@@ -15,6 +15,8 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 
+import { CustomCursor } from '@/components/ui/CustomCursor';
+
 const NAV_LINKS = [
   { label: 'Home',           section: 'top' },
   { label: 'About',          section: 'about' },
@@ -88,6 +90,7 @@ export default function Home() {
 
   return (
     <div className="relative min-h-screen flex overflow-x-hidden" style={{ background: 'transparent', color: '#F8FAFC' }}>
+      <CustomCursor />
 
       {/* ══ GLOBAL ANIMATED BACKGROUND ══ */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden" style={{ zIndex: -10 }}>

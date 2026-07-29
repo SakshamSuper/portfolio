@@ -158,3 +158,16 @@ body {
 .animate-orb-1 { animation: orb-drift-1 20s ease-in-out infinite; }
 .animate-orb-2 { animation: orb-drift-2 24s ease-in-out infinite; }
 .animate-orb-3 { animation: orb-drift-3 16s ease-in-out infinite; }
+
+/* ── TOUCH & CURSOR RESPONSIVENESS ────────────────────────── */
+button, a, [role="button"], input[type="submit"], input[type="button"] {
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:active, a:active, [role="button"]:active {
+  transform: scale(0.97);
+  transition: transform 0.1s ease-out;
+}
+
