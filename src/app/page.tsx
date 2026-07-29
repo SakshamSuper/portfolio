@@ -120,33 +120,33 @@ export default function Home() {
       </div>
 
       {/* ══════════════════════════════════
-          LEFT SIDEBAR (Visible on all devices)
+          LEFT SIDEBAR (Desktop / Tablet)
       ══════════════════════════════════ */}
-      <aside className="flex fixed left-0 top-0 bottom-0 z-50 flex-col justify-between items-center py-4 md:py-6 border-r border-white/5 w-[52px] md:w-[64px]"
-        style={{ background: 'rgba(14,14,18,0.9)', backdropFilter: 'blur(20px)' }}>
+      <aside className="hidden md:flex fixed left-0 top-0 bottom-0 z-50 flex-col justify-between items-center py-6 border-r border-white/5"
+        style={{ width: '64px', background: 'rgba(14,14,18,0.9)', backdropFilter: 'blur(20px)' }}>
 
         {/* Logo */}
         <button
           onClick={() => scrollTo('top')}
-          className="text-[#F8FAFC] font-mono font-bold text-lg md:text-xl hover:text-[#F8FAFC] transition-colors hover:scale-110 transform"
+          className="text-[#F8FAFC] font-mono font-bold text-xl hover:text-[#F8FAFC] transition-colors hover:scale-110 transform"
         >
           &lt;/&gt;
         </button>
 
         {/* Nav Icons */}
-        <nav className="flex flex-col gap-1.5 md:gap-2">
+        <nav className="flex flex-col gap-2">
           {SIDEBAR_ICONS.map(({ icon: Icon, label, section }) => (
             <button
               key={label}
               onClick={() => handleNav(label, section)}
               title={label}
-              className={`relative group p-2 md:p-3 rounded-xl transition-all duration-200 ${
+              className={`relative group p-3 rounded-xl transition-all duration-200 ${
                 activeNav === label
                    ? 'text-[#F8FAFC] bg-[#F8FAFC]/10 border border-[#F8FAFC]/20'
                    : 'text-slate-500 hover:text-white hover:bg-white/6 border border-transparent'
               }`}
             >
-              <Icon className="w-4.5 h-4.5 md:w-5 md:h-5" />
+              <Icon className="w-5 h-5" />
               {/* Tooltip */}
               <span className="pointer-events-none absolute left-[calc(100%+10px)] top-1/2 -translate-y-1/2 px-2.5 py-1 rounded-lg text-[11px] font-semibold text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity z-50 border border-white/10"
                 style={{ background: 'rgba(15,23,42,0.95)' }}>
@@ -157,20 +157,20 @@ export default function Home() {
         </nav>
 
         {/* Bottom: Social + Theme */}
-        <div className="flex flex-col gap-1.5 md:gap-2 items-center">
+        <div className="flex flex-col gap-2 items-center">
           {/* GitHub */}
           <a href="https://github.com/SakshamSuper" target="_blank" rel="noopener noreferrer"
             title="GitHub"
-            className="p-2 md:p-2.5 rounded-xl text-slate-500 hover:text-white hover:bg-white/8 border border-transparent transition-all">
-            <svg viewBox="0 0 24 24" className="w-4 h-4 md:w-[18px] md:h-[18px]" fill="none" stroke="currentColor" strokeWidth="2">
+            className="p-2.5 rounded-xl text-slate-500 hover:text-white hover:bg-white/8 border border-transparent transition-all">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
             </svg>
           </a>
           {/* LinkedIn */}
           <a href="https://www.linkedin.com/in/saksham-aggarwal-1343b0219" target="_blank" rel="noopener noreferrer"
             title="LinkedIn"
-            className="p-2 md:p-2.5 rounded-xl text-slate-500 hover:text-white hover:bg-white/8 border border-transparent transition-all">
-            <svg viewBox="0 0 24 24" className="w-4 h-4 md:w-[18px] md:h-[18px]" fill="none" stroke="currentColor" strokeWidth="2">
+            className="p-2.5 rounded-xl text-slate-500 hover:text-white hover:bg-white/8 border border-transparent transition-all">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
               <rect x="2" y="9" width="4" height="12" />
               <circle cx="4" cy="4" r="2" />
@@ -179,13 +179,13 @@ export default function Home() {
           {/* Mail */}
           <a href="mailto:sakshamaggarwal2475@gmail.com"
             title="Email"
-            className="p-2 md:p-2.5 rounded-xl text-slate-500 hover:text-white hover:bg-white/8 border border-transparent transition-all">
-            <Mail className="w-4 h-4 md:w-[18px] md:h-[18px]" />
+            className="p-2.5 rounded-xl text-slate-500 hover:text-white hover:bg-white/8 border border-transparent transition-all">
+            <Mail className="w-4.5 h-4.5 w-[18px] h-[18px]" />
           </a>
           {/* Theme toggle */}
           <button title="Toggle Theme"
-            className="p-2 md:p-2.5 rounded-xl text-slate-500 hover:text-[#F8FAFC] hover:bg-white/6 border border-transparent transition-all">
-            <Moon className="w-4 h-4 md:w-[18px] md:h-[18px]" />
+            className="p-2.5 rounded-xl text-slate-500 hover:text-[#F8FAFC] hover:bg-white/6 border border-transparent transition-all">
+            <Moon className="w-[18px] h-[18px]" />
           </button>
         </div>
       </aside>
@@ -193,12 +193,12 @@ export default function Home() {
       {/* ══════════════════════════════════
           MAIN CONTENT
       ══════════════════════════════════ */}
-      <div className="flex-1 flex flex-col ml-[52px] md:ml-[64px]">
+      <div className="flex-1 flex flex-col ml-0 md:ml-[64px]">
 
         {/* ── TOP NAVBAR ── */}
-        <header className="fixed top-2 sm:top-3 left-[52px] md:left-[64px] right-0 z-40 px-2 sm:px-6 md:px-12 lg:px-16 pointer-events-none">
+        <header className="fixed top-2 sm:top-3 left-0 md:left-[64px] right-0 z-40 px-3 sm:px-6 md:px-12 lg:px-16 pointer-events-none">
           <div
-            className="w-full max-w-7xl mx-auto flex items-center justify-between px-3 sm:px-6 py-2 rounded-2xl border border-white/8 pointer-events-auto"
+            className="w-full max-w-7xl mx-auto flex items-center justify-between px-3.5 sm:px-6 py-2 rounded-2xl border border-white/8 pointer-events-auto"
             style={{
               background: 'rgba(8,8,10,0.85)',
               backdropFilter: 'blur(24px)',
