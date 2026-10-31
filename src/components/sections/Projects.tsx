@@ -285,7 +285,7 @@ const ProjectCard = ({ p, i }: { p: typeof PROJECTS[0]; i: number }) => {
               className="w-8 h-8 rounded-full border border-white/10 bg-white/3 flex items-center justify-center text-slate-400 hover:text-white hover:border-white/20 hover:bg-white/8 transition-all">
               <GithubIcon />
             </a>
-            {p.live && !p.comingSoon ? (
+            {p.live && (
               <a href={p.live} target="_blank" rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 text-[9px] font-bold uppercase tracking-widest px-3.5 py-1.5 rounded-full border transition-all duration-300 hover:scale-105 active:scale-95 shadow-md shadow-black/40"
                 style={{ color: p.accent, borderColor: `${p.accent}30`, background: `${p.accent}12` }}
@@ -300,8 +300,6 @@ const ProjectCard = ({ p, i }: { p: typeof PROJECTS[0]; i: number }) => {
               >
                 View <ArrowUpRight size={10} />
               </a>
-            ) : (
-              <span className="text-[9px] font-bold text-white/25 border border-white/5 bg-white/[0.01] px-3.5 py-1.5 rounded-full">Soon</span>
             )}
           </div>
         </div>
