@@ -203,18 +203,6 @@ const PROJECTS = [
     gradient: 'from-[#040d14] via-[#061520] to-[#041620]',
     Viz: PostureViz,
   },
-  {
-    num: '04', tag: 'FINANCE · MACHINE LEARNING',
-    title: 'CRYPTO MARKET ANALYSIS ENGINE',
-    desc: 'LLM + ML hybrid pipeline extracting real-time price, volume & news data. Claude sentiment synthesis + Scikit-learn forecasting at ~60–75% direction accuracy.',
-    metrics: [{ label: 'Forecast Δ', value: '+60%' }, { label: 'R² Score', value: '0.93' }],
-    tech: ['Python', 'Claude API', 'Scikit-learn', 'Power BI'],
-    github: 'https://github.com/SakshamSuper',
-    live: 'https://github.com/SakshamSuper',
-    accent: '#8B5CF6',
-    gradient: 'from-[#0d0714] via-[#130a1f] to-[#0d0718]',
-    Viz: CryptoViz,
-  },
 ];
 
 // ── CARD ──────────────────────────────────────────────────────────

@@ -253,37 +253,6 @@ export const aiKnowledgeBase: KnowledgeBase = {
       lessons: "Financial AI requires extreme care around hallucination. RAG grounding with user's actual data is non-negotiable — the LLM must never invent numbers. Trust is built through transparency and verifiable data sourcing.",
       githubUrl: "https://github.com/SakshamSuper"
     },
-    {
-      id: "crypto-analysis",
-      title: "Crypto Analyst Pro — Real-Time Market Synthesis Engine",
-      subtitle: "LLM Synthesis + ML Forecasting + REST API Data Pipeline",
-      tech: ["Python", "Anthropic Claude API", "Scikit-learn", "Prompt Engineering", "REST APIs", "Power BI"],
-      metrics: [
-        "~60-75% accuracy in short-term price direction forecasting",
-        "~20% forecast stability improvement over simple moving average baselines",
-        "Automated news sentiment + price data synthesis pipeline",
-        "Analyzes 15+ major coins simultaneously via financial REST APIs"
-      ],
-      problem: "Crypto markets are highly volatile and driven by sentiment, making forecasting extremely unstable with basic technical indicators alone. Manual analysis of news, price feeds, and volume data is too slow and subjective.",
-      solution: "Built an automated pipeline extracting real-time price feeds, volume trends, and news streams via financial REST APIs. Designed structured Claude API prompt pipelines to convert raw market data into quantifiable sentiment and risk scores, combined with Scikit-learn predictive models.",
-      architecture: [
-        "Data Collection: Financial REST APIs feed real-time price, volume, and news data.",
-        "Feature Engineering: Lagging indicators, volatility spreads, and volume momentum scores.",
-        "LLM Sentiment Engine: Claude converts news streams into structured sentiment and risk scores.",
-        "Model Training: Scikit-learn classifiers with cross-validation and statistical backtesting.",
-        "Power BI Dashboard: Visualizes predictions, confidence intervals, and historical trends."
-      ],
-      workflow: [
-        "Fetch real-time data and compute technical features (MACD, RSI, Volatility bands).",
-        "Claude analyzes news sentiment and returns structured risk scores.",
-        "ML models train on rolling cross-validation window to prevent lookahead bias.",
-        "Export forecasts to dashboard; display trend directions with model confidence scores."
-      ],
-      businessValue: "Assists traders in identifying high-impact price indicators, improving risk management, and structuring stable trading portfolios. Demonstrates LLM-ML hybrid pipeline design.",
-      futureScope: "Incorporate social media sentiment from Twitter/Reddit and test deep learning models (LSTM, GRU) for time-series forecasting.",
-      lessons: "Simple regression models with strong L1/L2 regularization frequently outperform complex deep neural networks on highly noisy financial datasets. LLM sentiment is a powerful complementary signal.",
-      githubUrl: "https://github.com/SakshamSuper"
-    }
   ],
   experience: [
     {
