@@ -126,14 +126,77 @@ const TrafficViz = ({ accent }: { accent: string }) => (
   </div>
 );
 
+const WealthViz = ({ accent }: { accent: string }) => {
+  const [tick, setTick] = useState(0);
+  useEffect(() => {
+    const t = setInterval(() => setTick(n => (n + 1) % 4), 900);
+    return () => clearInterval(t);
+  }, []);
+  const bars = [55, 68, 74, 82, 90, 78, 95];
+  const labels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'];
+  return (
+    <div className="w-full h-full relative flex items-center justify-center px-3" style={{ background: 'rgba(16,185,129,0.03)' }}>
+      <div className="absolute top-2 left-2 flex items-center gap-1.5 px-2 py-0.5 rounded border border-emerald-500/30 bg-emerald-500/10 text-[8px] font-bold text-emerald-400 uppercase tracking-wider">
+        <span className="w-1 h-1 rounded-full bg-emerald-400 animate-ping" />AI Finance
+      </div>
+      <div className="absolute top-2 right-2 bg-black/60 border border-white/10 rounded px-2 py-0.5 text-[8px] font-mono">
+        <span className="text-white/40">Score </span>
+        <span className="font-bold" style={{ color: accent }}>94</span>
+      </div>
+      <div className="w-full flex items-end justify-center gap-1.5 h-16 px-1">
+        {bars.map((h, i) => (
+          <div key={i} className="flex flex-col items-center gap-0.5 flex-1">
+            <div
+              className="w-full rounded-sm transition-all duration-700"
+              style={{
+                height: `${tick >= i % 4 ? h * 0.55 : 12}px`,
+                background: i === bars.length - 1 ? accent : `${accent}55`,
+                boxShadow: i === bars.length - 1 ? `0 0 6px ${accent}80` : 'none',
+              }}
+            />
+            <span className="text-[6px] font-mono text-white/25">{labels[i]}</span>
+          </div>
+        ))}
+      </div>
+      <div className="absolute bottom-2 left-2 bg-black/60 border border-white/8 rounded px-2 py-0.5 text-[8px] font-mono text-white/40">
+        Savings: <span style={{ color: accent }} className="font-bold">+23%</span>
+      </div>
+    </div>
+  );
+};
+
 // ── PROJECT DATA ──────────────────────────────────────────────────
 const PROJECTS = [
   {
-    num: '01', tag: 'COMPUTER VISION · AI',
+    num: '01', tag: 'MULTI-AGENT · LLM · RAG',
+    title: 'ADAPTIVE MULTI-AGENT RAG SYSTEM',
+    desc: 'Production multi-agent LLM orchestration via LangGraph — Resume Parser, Question, Evaluation & Feedback agents. 100% Top-1 FAISS retrieval. 97.92% CV accuracy.',
+    metrics: [{ label: 'Top-1 Retrieval', value: '100%' }, { label: 'Recall@3', value: '96.7%' }],
+    tech: ['LangGraph', 'FAISS', 'FastAPI', 'Docker'],
+    github: 'https://github.com/SakshamSuper',
+    live: 'https://github.com/SakshamSuper',
+    accent: '#0EA5E9',
+    gradient: 'from-[#040d14] via-[#061520] to-[#041620]',
+    Viz: ReportViz,
+  },
+  {
+    num: '02', tag: 'FINTECH · AI · LLM',
+    title: 'WEALTHCRAFT — AI FINANCE PLATFORM',
+    desc: 'LLM-powered personal finance platform with Plaid bank connectivity, AI transaction categorization (~94% accuracy), real-time financial health scoring, and RAG-grounded investment advice.',
+    metrics: [{ label: 'Accuracy', value: '~94%' }, { label: 'Dimensions', value: '8+' }],
+    tech: ['LangChain', 'FastAPI', 'React', 'Plaid API'],
+    github: 'https://github.com/SakshamSuper',
+    live: 'https://github.com/SakshamSuper',
+    accent: '#10B981',
+    gradient: 'from-[#060f0e] via-[#07150f] to-[#060f0d]',
+    Viz: WealthViz,
+  },
+  {
+    num: '03', tag: 'COMPUTER VISION · AI',
     title: 'AI POSTURE ANALYSIS SYSTEM',
-    desc: 'Real-time posture detection & joint-angle estimation using MediaPipe. ~90% tracking accuracy with live rep counting across 10+ exercises.',
+    desc: 'Real-time posture detection & joint-angle estimation using MediaPipe. ~90% tracking accuracy with live rep counting across 10+ exercises. Local LLM + Notion tool-calling.',
     metrics: [{ label: 'Accuracy', value: '~90%' }, { label: 'Exercises', value: '10+' }],
-    tech: ['Python', 'OpenCV', 'MediaPipe', 'CV'],
+    tech: ['Python', 'OpenCV', 'MediaPipe', 'GPT4All'],
     github: 'https://github.com/SakshamSuper',
     live: 'https://github.com/SakshamSuper',
     accent: '#06B6D4',
@@ -141,28 +204,16 @@ const PROJECTS = [
     Viz: PostureViz,
   },
   {
-    num: '02', tag: 'FINANCE · MACHINE LEARNING',
+    num: '04', tag: 'FINANCE · MACHINE LEARNING',
     title: 'CRYPTO MARKET ANALYSIS ENGINE',
-    desc: 'EDA & ML pipeline on 5 years of Bitcoin data. Regression + classification models improving price prediction by ~60–75%. Power BI dashboards.',
+    desc: 'LLM + ML hybrid pipeline extracting real-time price, volume & news data. Claude sentiment synthesis + Scikit-learn forecasting at ~60–75% direction accuracy.',
     metrics: [{ label: 'Forecast Δ', value: '+60%' }, { label: 'R² Score', value: '0.93' }],
-    tech: ['Python', 'ML', 'Power BI', 'SQL'],
+    tech: ['Python', 'Claude API', 'Scikit-learn', 'Power BI'],
     github: 'https://github.com/SakshamSuper',
     live: 'https://github.com/SakshamSuper',
     accent: '#8B5CF6',
     gradient: 'from-[#0d0714] via-[#130a1f] to-[#0d0718]',
     Viz: CryptoViz,
-  },
-  {
-    num: '03', tag: 'COMPUTER VISION · YOLO',
-    title: 'SMART TRAFFIC MANAGEMENT',
-    desc: 'AI-powered real-time vehicle detection & traffic flow using YOLOv8 + Deep SORT. Dynamically optimizes intersection green-light intervals.',
-    metrics: [{ label: 'Engine', value: 'YOLOv8' }, { label: 'Tracking', value: 'SORT' }],
-    tech: ['YOLOv8', 'Deep SORT', 'OpenCV', 'Python'],
-    github: 'https://github.com/SakshamSuper',
-    accent: '#10B981',
-    gradient: 'from-[#060f0e] via-[#07150f] to-[#060f0d]',
-    comingSoon: true,
-    Viz: TrafficViz,
   },
 ];
 
@@ -307,8 +358,8 @@ export const Projects: React.FC = () => (
         </div>
       </div>
 
-      {/* 3-col Equal Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+      {/* 2×2 Equal Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         {PROJECTS.map((p, i) => (
           <ProjectCard key={p.num} p={p} i={i} />
         ))}

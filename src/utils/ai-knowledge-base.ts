@@ -71,7 +71,7 @@ export const aiKnowledgeBase: KnowledgeBase = {
     title: "AI Engineer & Data Scientist",
     subtitles: [
       "AI Engineer",
-      "Machine Learning Engineer",
+      "Multi-Agent LLM Developer",
       "Computer Vision Specialist",
       "Full Stack AI Developer"
     ],
@@ -80,7 +80,7 @@ export const aiKnowledgeBase: KnowledgeBase = {
     phone: "+91 9354703751",
     github: "https://github.com/SakshamSuper",
     linkedin: "https://www.linkedin.com/in/saksham-aggarwal-1343b0219",
-    summary: "AI & Data Science student with hands-on experience building LLM-powered applications, local agentic workflows, and computer vision systems. Azure-certified across AI Engineering, Data Science, and Fabric Analytics. Proven track record of shipping under pressure (1st place out of 600+ teams in national hackathons)."
+    summary: "AI Engineer and Data Science undergraduate (CGPA 8.98) with proven, production-grade experience building multi-agent LLM systems, RAG pipelines, and end-to-end AI applications. Deep expertise in Python, Scikit-learn, FAISS, LangGraph, OpenCV, SQL, and cloud platforms. Winner of a national hackathon (1st of 600+ teams); certified across Microsoft Azure AI, Data Science & Fabric Analytics and Oracle Cloud Infrastructure."
   },
   education: [
     {
@@ -111,134 +111,178 @@ export const aiKnowledgeBase: KnowledgeBase = {
   ],
   skills: [
     {
-      category: "ML/AI",
+      category: "LLM & Multi-Agent AI",
       items: [
+        { name: "LangGraph", proficiency: 93 },
+        { name: "LangChain", proficiency: 90 },
+        { name: "RAG Architecture (FAISS)", proficiency: 92 },
+        { name: "Prompt Engineering", proficiency: 90 },
+        { name: "Multi-Agent Orchestration", proficiency: 88 },
+        { name: "OpenAI / Claude / GPT4All", proficiency: 85 }
+      ]
+    },
+    {
+      category: "ML & Computer Vision",
+      items: [
+        { name: "Scikit-learn", proficiency: 92 },
         { name: "OpenCV", proficiency: 92 },
         { name: "MediaPipe", proficiency: 90 },
         { name: "PyTorch", proficiency: 82 },
         { name: "TensorFlow", proficiency: 75 },
-        { name: "Scikit-Learn", proficiency: 88 }
+        { name: "Statistical Analysis", proficiency: 88 }
       ]
     },
     {
-      category: "Data Analytics",
-      items: [
-        { name: "Pandas", proficiency: 94 },
-        { name: "NumPy", proficiency: 92 },
-        { name: "Matplotlib & Seaborn", proficiency: 90 },
-        { name: "Power BI", proficiency: 88 },
-        { name: "Tableau", proficiency: 80 }
-      ]
-    },
-    {
-      category: "Languages & Tools",
+      category: "Programming & Engineering",
       items: [
         { name: "Python", proficiency: 95 },
-        { name: "SQL (MySQL)", proficiency: 90 },
-        { name: "Advanced Excel", proficiency: 85 },
+        { name: "SQL (PostgreSQL, MySQL)", proficiency: 90 },
+        { name: "FastAPI", proficiency: 88 },
+        { name: "Streamlit", proficiency: 87 },
+        { name: "Docker", proficiency: 82 },
         { name: "Git / GitHub", proficiency: 92 },
-        { name: "Postman API Testing", proficiency: 90 },
-        { name: "Jupyter Notebook", proficiency: 95 }
+        { name: "Pytest", proficiency: 85 }
       ]
     },
     {
-      category: "Platforms",
+      category: "Data & Cloud Platforms",
       items: [
         { name: "Microsoft Azure (AI/Data)", proficiency: 90 },
-        { name: "Google Cloud Platform", proficiency: 75 },
-        { name: "Kaggle", proficiency: 85 },
-        { name: "Vercel", proficiency: 80 }
+        { name: "Pandas & NumPy", proficiency: 94 },
+        { name: "Power BI", proficiency: 88 },
+        { name: "Oracle Cloud (OCI)", proficiency: 78 },
+        { name: "Google Cloud Platform", proficiency: 75 }
       ]
     }
   ],
   projects: [
     {
+      id: "multi-agent-rag",
+      title: "Adaptive Multi-Agent & RAG Knowledge System",
+      subtitle: "LangGraph · FAISS · Scikit-learn · FastAPI · Streamlit · Docker",
+      tech: ["Python", "LangGraph", "FAISS", "Scikit-learn", "FastAPI", "Streamlit", "Docker"],
+      metrics: [
+        "100% Top-1 topic retrieval accuracy via FAISS vector pipeline",
+        "96.7% Recall@3 and perfect 1.0 MRR on knowledge retrieval benchmarks",
+        "97.92% cross-validated accuracy on candidate readiness classifier",
+        "25-test automated Pytest suite for continuous pipeline integrity"
+      ],
+      problem: "Technical hiring processes lack adaptive, personalized evaluation. Static question banks fail to probe candidates based on their actual knowledge gaps, and manual interviews are inconsistent and expensive.",
+      solution: "Engineered a production multi-agent LLM orchestration system using LangGraph with four specialized agents — Resume Parser, Question, Evaluation, and Feedback — conducting fully adaptive technical interviews grounded in a live FAISS RAG knowledge base.",
+      architecture: [
+        "LangGraph State Machine: Orchestrates four agents with conditional routing based on candidate responses.",
+        "FAISS RAG Pipeline: Sentence-Transformers encode domain knowledge; FAISS retrieves top-k relevant chunks for each question.",
+        "Scikit-learn Classifier: Trained on readiness signals to score candidates at 97.92% CV accuracy.",
+        "FastAPI Backend: Exposes REST endpoints for interview sessions, scoring, and feedback retrieval.",
+        "Streamlit UI: Clean, interactive front-end for the interview experience.",
+        "Docker: Containerized full-stack application for reproducible deployment."
+      ],
+      workflow: [
+        "Candidate uploads resume; Resume Parser agent extracts skills, experience, and gaps.",
+        "Question agent queries FAISS knowledge base to select domain-appropriate questions.",
+        "Evaluation agent scores answers using the Scikit-learn classifier and semantic similarity.",
+        "Feedback agent synthesizes a structured report with gap analysis and improvement roadmap.",
+        "25 automated Pytest tests run on each pipeline change to prevent regressions."
+      ],
+      businessValue: "End-to-end ownership from data ingestion to live deployment. Demonstrates production-grade multi-agent system design, vector retrieval, ML classification, and full-stack engineering in a single cohesive product.",
+      futureScope: "Expand knowledge base to multiple engineering domains, add voice-based interview mode using Whisper, and integrate with ATS systems for automated candidate pipeline management.",
+      lessons: "Designing robust agent state machines requires careful consideration of failure modes. LangGraph's conditional routing provides excellent control, but agent prompt schemas must be extremely precise for reliable tool-calling with smaller models.",
+      githubUrl: "https://github.com/SakshamSuper"
+    },
+    {
       id: "posture-analysis",
-      title: "AI Posture Analysis & Physiotherapy System",
-      subtitle: "Computer Vision + Local Agentic LLM Chatbot + Notion Tool Use",
+      title: "AI Vision Telemetry & Local LLM Agent",
+      subtitle: "Computer Vision + Tool-Calling LLM + Notion API Integration",
       tech: ["Python", "OpenCV", "MediaPipe", "GPT4All", "OCR", "Notion API", "REST APIs"],
       metrics: [
-        "~90% pose-tracking accuracy in controlled environments",
+        "~90% pose-tracking accuracy across 10+ exercises",
         "~25-30% improvement in user form accuracy during test sessions",
-        "Supports 10+ exercises with live repetition counting and joint angle feedback"
+        "Live rep counting with joint-angle feedback and real-time voice correction",
+        "On-premise LLM with RAG-style OCR document grounding — zero cloud API dependency"
       ],
-      problem: "Lack of immediate, affordable feedback for home-based physiotherapy exercises increases the risk of injury and slows recovery. Users have no simple way to log, retrieve, or query their session logs naturally.",
-      solution: "Developed a computer vision application that estimates joint angles in real time. Extended this with a local GPT4All LLM conversational assistant that queries the session logs and logs them directly to users' Notion accounts via tool calling.",
+      problem: "Lack of immediate, affordable feedback for home-based physiotherapy exercises increases injury risk and slows recovery. Users have no simple way to log, retrieve, or query their session data naturally.",
+      solution: "Developed a computer vision application that estimates joint angles in real time using MediaPipe. Extended with a local GPT4All LLM conversational assistant that queries session logs and syncs them to Notion via tool calling.",
       architecture: [
         "Frame Capture: OpenCV captures video from the webcam stream.",
         "Pose Estimation: MediaPipe computes 33 key coordinate points on the user's body.",
-        "Angle Computation: Mathematical calculation of joint angles (e.g. elbow, knee) at critical joints.",
-        "LLM Pipeline: Structured session metrics are exported, and a local GPT4All instance ingests them.",
+        "Angle Computation: Mathematical calculation of joint angles at critical joints.",
+        "LLM Pipeline: Structured session metrics are exported; a local GPT4All instance ingests them.",
         "Notion Connector: LLM calls custom Python tools to insert, retrieve, or summarize rows in a Notion database."
       ],
       workflow: [
         "User stands in front of camera and performs a selected exercise.",
-        "The CV model tracks joints, counts reps, checks if angles meet target parameters, and voices live correction.",
-        "At the end of the session, metrics are generated.",
-        "The user talks to the chatbot: 'Log this session to Notion.' The agent parses the request and makes the Notion API call.",
-        "The user can also ask: 'How was my form in my last three bicep curl sessions?' The LLM retrieves logs from Notion and answers."
+        "The CV model tracks joints, counts reps, checks angle parameters, and voices live correction.",
+        "At session end, metrics are generated and the user interacts with the LLM agent.",
+        "'Log this session to Notion' — the agent parses the request and calls the Notion API.",
+        "'How was my form in my last three sessions?' — LLM retrieves logs from Notion and answers."
       ],
-      businessValue: "Makes home-based physiotherapy safe and self-guided. Showcases complete full-stack integration of computer vision (low-level logic) with generative AI agent patterns (high-level reasoning and API tool-use).",
-      futureScope: "Incorporate multi-camera views for 3D depth estimation, add medical report OCR extraction to calibrate target angle ranges automatically, and host the video pipeline on a fast cloud server.",
-      lessons: "Local LLM reasoning models are highly sensitive to prompt structure. Designing solid, bulletproof function schemas for tool calling on models with under 8B parameters is extremely challenging but highly rewarding."
+      businessValue: "Makes home-based physiotherapy safe and self-guided. Showcases full-stack integration of computer vision with generative AI agent patterns and live API tool-use — entirely on-premise.",
+      futureScope: "Add multi-camera views for 3D depth estimation, medical report OCR to calibrate target angle ranges automatically, and host video pipeline on cloud for mobile access.",
+      lessons: "Local LLM reasoning models are highly sensitive to prompt structure. Designing bulletproof function schemas for tool calling on sub-8B parameter models is extremely challenging but highly rewarding.",
+      githubUrl: "https://github.com/SakshamSuper"
     },
     {
-      id: "equity-analyst",
-      title: "Equity Analyst Pro",
-      subtitle: "LLM-Powered Financial Analysis Dashboard",
-      tech: ["Python", "Anthropic API", "React", "Prompt Engineering", "Structured JSON Schema"],
+      id: "wealthcraft",
+      title: "WealthCraft — AI Personal Finance Platform",
+      subtitle: "LLM-Powered Financial Planning & Wealth Management Dashboard",
+      tech: ["Python", "LangChain", "FastAPI", "React", "PostgreSQL", "Plaid API", "Anthropic Claude"],
       metrics: [
-        "100% parse success rate through strict JSON validation schema",
-        "Generates multi-company structured comparison matrices in under 5 seconds",
-        "Identifies and flags anomalous quarterly reports with ~85% precision"
+        "Automated budget categorization with ~94% accuracy using LLM classification",
+        "Real-time financial health scoring across 8+ dimensions",
+        "Personalized AI investment insights grounded in user's actual spending patterns",
+        "End-to-end encrypted financial data pipeline"
       ],
-      problem: "Company earnings releases are long, complex, and unstandardized. Financial analysts spend hours manually copying details to spreadsheets and comparing metrics.",
-      solution: "An automated dashboard that passes raw text earnings transcripts to the Anthropic API using structured prompt schemas. The model returns verified JSON containing key performance indicators, summaries, and flags, rendered on a clean interactive React interface.",
+      problem: "Personal finance management tools are either overly simplistic (basic budgeting) or inaccessibly complex (institutional-grade tools). Users lack personalized, actionable AI-driven guidance tailored to their actual financial behavior.",
+      solution: "Built a full-stack AI financial platform that connects to user bank accounts via Plaid API, automatically categorizes transactions using LLM classification, generates personalized wealth-building recommendations, and tracks financial health scores in real time.",
       architecture: [
-        "Text Ingestion: The user inputs PDF or raw text earnings reports.",
-        "JSON Schema Engine: Defines a strict structural schema (summary, revenue, margins, flags, guidance).",
-        "LLM Query: Prompts Anthropic Claude using XML tags to output JSON matching the exact schema.",
-        "Validation: A parser verifies keys, types, and mathematical consistency before saving to SQLite.",
-        "UI Rendering: A React app visualizes the financial indicators, charts historical performance, and highlights flagged risks."
+        "Plaid Integration: Securely fetches bank transactions, balances, and account metadata.",
+        "LLM Transaction Classifier: Claude classifies and categorizes transactions with context-aware reasoning.",
+        "Financial Health Engine: FastAPI backend computes 8-dimension health scores (savings rate, debt ratio, etc.).",
+        "RAG Advisor: LangChain retrieves personal financial data to ground AI recommendations.",
+        "React Dashboard: Interactive charts for spending trends, savings goals, and investment allocation."
       ],
       workflow: [
-        "User uploads the PDF of a company's quarterly earnings statement.",
-        "The backend cleans the text and queries Claude with structured prompt rules.",
-        "Claude parses the balance sheet, cash flows, and notes, returning a clean JSON object.",
-        "The dashboard visualizes the findings: key KPIs, a quick executive summary, and flagged operational risks.",
-        "The analyst compares multiple quarters side-by-side inside the interactive matrix."
+        "User connects bank account via Plaid's secure OAuth flow.",
+        "Transactions are fetched and classified by the LLM categorization pipeline.",
+        "Financial health score is computed and displayed across all dimensions.",
+        "User asks: 'How can I save more this month?' — RAG advisor grounds response in actual spending data.",
+        "Personalized investment and savings recommendations are surfaced based on risk profile and goals."
       ],
-      businessValue: "Reduces financial report parsing times by over 90%. Demonstrates prompt engineering capability, structured text extraction, and bridging LLM outputs to rigid, user-friendly frontend dashboards.",
-      futureScope: "Integrate vector embeddings for semantic search over historical transcript databases and connect live web scraping to fetch earnings calls as soon as they release.",
-      lessons: "LLMs can struggle with calculations. It is better to extract the raw figures via LLM and perform calculations (like margins or percentage growth) in code than to rely on the model for arithmetic."
+      businessValue: "Democratizes sophisticated financial planning by combining secure bank connectivity, LLM intelligence, and actionable dashboards. Demonstrates expertise in FinTech integration, RAG-grounded advice, and production security practices.",
+      futureScope: "Add stock portfolio tracking, tax optimization recommendations, and predictive cash flow forecasting using time-series ML models.",
+      lessons: "Financial AI requires extreme care around hallucination. RAG grounding with user's actual data is non-negotiable — the LLM must never invent numbers. Trust is built through transparency and verifiable data sourcing.",
+      githubUrl: "https://github.com/SakshamSuper"
     },
     {
       id: "crypto-analysis",
-      title: "Cryptocurrency Market Analysis Engine",
-      subtitle: "Machine Learning & Price Direction Forecasting",
-      tech: ["Python", "Machine Learning", "Regression", "Exploratory Data Analysis", "Power BI", "Tableau", "Pandas"],
+      title: "Crypto Analyst Pro — Real-Time Market Synthesis Engine",
+      subtitle: "LLM Synthesis + ML Forecasting + REST API Data Pipeline",
+      tech: ["Python", "Anthropic Claude API", "Scikit-learn", "Prompt Engineering", "REST APIs", "Power BI"],
       metrics: [
         "~60-75% accuracy in short-term price direction forecasting",
-        "~20% forecast stability improvement relative to simple moving average baselines",
-        "Analyzes historical volatility trends across 15+ major coins simultaneously"
+        "~20% forecast stability improvement over simple moving average baselines",
+        "Automated news sentiment + price data synthesis pipeline",
+        "Analyzes 15+ major coins simultaneously via financial REST APIs"
       ],
-      problem: "Crypto markets are highly volatile and driven by sentiment, making forecasting extremely unstable with basic technical indicators alone.",
-      solution: "Conducted exhaustive exploratory data analysis (EDA) on historical prices, volumes, and volatility indicators. Trained multiple regression and classification models to predict short-term price direction, visualizing findings in interactive Power BI dashboards.",
+      problem: "Crypto markets are highly volatile and driven by sentiment, making forecasting extremely unstable with basic technical indicators alone. Manual analysis of news, price feeds, and volume data is too slow and subjective.",
+      solution: "Built an automated pipeline extracting real-time price feeds, volume trends, and news streams via financial REST APIs. Designed structured Claude API prompt pipelines to convert raw market data into quantifiable sentiment and risk scores, combined with Scikit-learn predictive models.",
       architecture: [
-        "Data Collection: Fetched historical daily/hourly price, volume, and volatility data.",
-        "Feature Engineering: Created lagging indicators, volatility spreads, and volume momentum scores.",
-        "Model Training: Evaluated Linear, Ridge, and Lasso Regressions along with Random Forests.",
-        "Dashboard Design: Built Power BI dashboards connecting SQLite predictions and metrics to active charts."
+        "Data Collection: Financial REST APIs feed real-time price, volume, and news data.",
+        "Feature Engineering: Lagging indicators, volatility spreads, and volume momentum scores.",
+        "LLM Sentiment Engine: Claude converts news streams into structured sentiment and risk scores.",
+        "Model Training: Scikit-learn classifiers with cross-validation and statistical backtesting.",
+        "Power BI Dashboard: Visualizes predictions, confidence intervals, and historical trends."
       ],
       workflow: [
-        "Fetch data and compute technical features (MACD, RSI, Volatility bands).",
-        "Train and tune models on a rolling cross-validation window to prevent lookahead bias.",
-        "Export forecasts to SQLite and update the Power BI reporting dashboard.",
-        "The dashboard displays predicted trend directions, model confidence scores, and historical indicators."
+        "Fetch real-time data and compute technical features (MACD, RSI, Volatility bands).",
+        "Claude analyzes news sentiment and returns structured risk scores.",
+        "ML models train on rolling cross-validation window to prevent lookahead bias.",
+        "Export forecasts to dashboard; display trend directions with model confidence scores."
       ],
-      businessValue: "Assists traders in identifying high-impact price indicators, improving risk management, and structuring stable trading portfolios.",
-      futureScope: "Incorporate social media sentiment analysis (from Twitter and Reddit) as a feature, and test deep learning models (LSTM, GRU) for time-series forecasting.",
-      lessons: "Overfitting is a massive risk in financial data. Simple regression models with strong L1/L2 regularization frequently outperform complex, deep neural networks on highly noisy financial datasets."
+      businessValue: "Assists traders in identifying high-impact price indicators, improving risk management, and structuring stable trading portfolios. Demonstrates LLM-ML hybrid pipeline design.",
+      futureScope: "Incorporate social media sentiment from Twitter/Reddit and test deep learning models (LSTM, GRU) for time-series forecasting.",
+      lessons: "Simple regression models with strong L1/L2 regularization frequently outperform complex deep neural networks on highly noisy financial datasets. LLM sentiment is a powerful complementary signal.",
+      githubUrl: "https://github.com/SakshamSuper"
     }
   ],
   experience: [
